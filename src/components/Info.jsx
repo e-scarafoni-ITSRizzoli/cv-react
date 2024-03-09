@@ -33,17 +33,17 @@ export default function Info({baseDataArray, fields, baseDataStructure, data, se
 
 
     return(
-        <div>
+        <div className="infoSection">
             {editMode &&
                 <>
                     {data.map((f) => {
                         return (
-                            <div key={f.id}>
+                            <div key={f.id} className="sectionDivi">
                                 <h4> {sectionType} {f.id + 1}</h4>
                                 <form>
                                     {fields.map((field) => {
                                         return (
-                                            <div key={field.key + f.id}>
+                                            <div key={field.key + f.id} className="inputDivi">
                                                 <label htmlFor={field.key}> {field.toShow}:</label>
                                                 <input type={field.type} id={field.key} name={field.key}
                                                        onChange={() => handleOnChange(f.id, event)} value={data[f.id][field.key]}/>
@@ -51,11 +51,11 @@ export default function Info({baseDataArray, fields, baseDataStructure, data, se
                                         )
                                     })}
                                 </form>
-                                <button onClick={() => deleteSection(f.id)}> Delete {sectionType}</button>
+                                <button className="delete" onClick={() => deleteSection(f.id)}> Delete {sectionType}</button>
                             </div>
                         )
                     })}
-                    <button onClick={addSection}> Add {sectionType}</button>
+                    <button className="addSection" onClick={addSection}> Add {sectionType}</button>
                 </>
             }
 
@@ -63,7 +63,7 @@ export default function Info({baseDataArray, fields, baseDataStructure, data, se
             {!editMode &&
                 data.map((f) => {
                         return (
-                            <div key={f.id}>
+                            <div key={f.id} className="sectionDivi">
                                 <h4> {sectionType} {f.id + 1}</h4>
                                     {fields.map((field) => {
                                         return (
@@ -81,7 +81,7 @@ export default function Info({baseDataArray, fields, baseDataStructure, data, se
                 })
             }
 
-            <input type="submit" value={editMode ? "Save" : "Edit"} onClick={() => {
+            <input type="submit" className="save" value={editMode ? "Save" : "Edit"} onClick={() => {
                 setEditMode(!editMode)
             }}>
             </input>

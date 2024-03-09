@@ -40,7 +40,7 @@ function App() {
 
     return (
     <>
-        <h1>CV Application</h1>
+        <h1>CV Builder</h1>
 
         <Card title="General Info">
             <GeneralInfo data={generalData} setData={setGeneralData} editMode={generalEditMode} setEditMode={setGeneralEditMode}/>

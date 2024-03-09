@@ -30,7 +30,7 @@ export default function GeneralInfo({data, setData, editMode, setEditMode}) {
                 </>
             }
             {!editMode &&
-                <div>
+                <div className="sectionDivi">
                     {fields.map((field) => {
                         return (
                             <div key={field.key}>
@@ -44,7 +44,7 @@ export default function GeneralInfo({data, setData, editMode, setEditMode}) {
                 </div>
             }
 
-            <input type="submit" value={editMode ? "Save" : "Edit"} onClick={() => {
+            <input type="submit" className="save" value={editMode ? "Save" : "Edit"} onClick={() => {
                 setEditMode(!editMode)
             }}>
             </input>

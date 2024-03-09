@@ -38,16 +38,36 @@ h1 {
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.2rem 1rem;
+  padding: 0.5rem 1rem;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color,background-color 0.25s;
+
 }
+
+input.save {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color,background-color 0.25s;
+  margin-top: 1rem;
+}
+input.save:hover {
+  border-color: #646cff;
+  background-color: green;
+}
+
 button:hover {
   border-color: #646cff;
+  background-color: #888888;
 }
 button:focus,
 button:focus-visible {
@@ -55,9 +75,10 @@ button:focus-visible {
 }
 
 .card {
-  border: 2px solid #ffffff;
+  border: 2px solid;
+  border-color: white;
   border-radius: 8px;
-
+  width: 100%;
 }
 .card-content {
   overflow: hidden;
@@ -73,13 +94,80 @@ button:focus-visible {
 form {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
+}
+
+label {
+  text-align: left;
+}
+
+input {
+  border: 1px solid white;
+  border-radius: 4px;
+  min-height: 1.5rem;
 }
 
 div.cardHeader {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
+
+div.infoSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+div.sectionDivi {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+h4 {
+  margin: 0;
+}
+
+div.inputDivi {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+button.delete {
+  width: 10rem;
+  align-self: center;
+  background-color: darkred;
+}
+
+button.delete:hover {
+  background-color: black;
+}
+
+button.addSection {
+  width: 10rem;
+}
+
+p {
+  margin: 0;
+}
+.card {
+  background-color: #242424;
+}
+
+body {
+  background-image: url("assets/bg_pattern_dark.svg");
+  background-size: auto;
+  background-repeat: repeat;
+  background-color: black;
+}
+
+
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -91,5 +179,56 @@ div.cardHeader {
   }
   button {
     background-color: #f9f9f9;
+  }
+  input.save {
+    background-color: #f9f9f9;
+  }
+  input.save:hover {
+    background-color: lightgreen;
+  }
+  button:hover {
+    background-color: lightgray;
+  }
+  button.delete {
+    background-color: red;
+  }
+  button.delete:hover {
+    background-color: darkred;
+  }
+  input {
+    border: 1px solid black;
+  }
+  .card {
+    border-color: black;
+  }
+  .card {
+    background-color: white;
+  }
+
+  body {
+    background-image: url("assets/bg_pattern.svg");
+    background-size: auto;
+    background-repeat: repeat;
+    background-color: antiquewhite;
+  }
+
+}
+
+
+
+
+
+@media (max-width: 450px) {
+    button {
+      min-height: 3rem  ;
+    }
+    button.delete, button.addSection {
+      width: 12rem;
+    }
+  input.save {
+    min-height: 3rem;
+  }
+  input {
+    min-height: 2rem;
   }
 }
